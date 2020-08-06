@@ -1,7 +1,7 @@
 import axios from 'axios';
 axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem("token")}`;
 
-const API_TOKEN = "b823688b32c2291b6c40399472cbe91b";
+const API_TOKEN = "";
 
 export function getFilmsFromApiWithSearchedText (text, page) {
   const url = 'https://api.themoviedb.org/3/search/movie?api_key=' + API_TOKEN + '&language=fr&query=' + text + '&page=' + page
