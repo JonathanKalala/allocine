@@ -1,0 +1,21 @@
+footer{
+    display: grid;
+    grid-template-rows: 200px auto;
+
+    .footer1{
+        background-color: rgb(95, 85, 85);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 60px;
+        padding-left: 5%;
+    }
+
+    .footer2{
+        background-color: #222222;
+
+        div{
+            text-align: center;
+        }
+
+    }
+}
