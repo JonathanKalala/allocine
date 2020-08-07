@@ -7,12 +7,14 @@ class App extends React.Component {
 
 
 render(){
-  const {data, pagePlus} = this.props
+  const {data, pagePlus, pageMoin, totalPage, clickPage} = this.props
+  console.log(totalPage);
+  
 
   return (
     <div className="">
         <Carousel />
-        <CardFilm data={data} pagePlus={pagePlus} />
+        <CardFilm data={data} pagePlus={pagePlus} pageMoin={pageMoin} totalPage={totalPage} clickPage={clickPage}/>
       </div>
   );
 }
