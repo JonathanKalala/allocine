@@ -1,6 +1,6 @@
 footer{
     display: grid;
-    grid-template-rows: 200px auto;
+    grid-template-rows: auto auto;
 
     .footer1{
         background-color: rgb(95, 85, 85);
@@ -17,5 +17,25 @@ footer{
             text-align: center;
         }
 
+        @media screen and (max-width: 600px) {
+            img {
+               max-width: 200px;
+            }
+          }
+
     }
+    @media screen and (max-width: 600px) {
+        .footer1 {
+           display: grid;
+           grid-template-columns: 1fr;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .footer1 {
+           display: none;
+        }
+      }
 }
+
+

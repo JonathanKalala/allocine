@@ -56,6 +56,14 @@ _searchTextInputChanged = input =>( e )=> {
 })
 }
 
+
+
+
+AjoutFavorie = input =>( e )=> {
+  console.log("Je suis ajout");
+  
+}
+
 pagePlus = input =>( e )=> {
 if(this.page===0){
   this.page= this.page+2
@@ -176,7 +184,7 @@ render(){
             <div className= "App">
                 {/* <Route exact path="/" component={TheContainer}/> */}
                 <Route exact path='/' component={() => <TheContainer data={this.state.films} pagePlus={this.pagePlus} pageMoin={this.pageMoin} totalPage={this.totalPage} clickPage={this.clickPage} />} />
-                <Route path="/Detail" component={Detail}/>
+                <Route path="/Detail/:id" component={Detail}/>
                 
             </div>
             </Switch>

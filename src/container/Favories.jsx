@@ -48,6 +48,11 @@ class CardFilm extends React.Component {
     
   }
 
+  componentDidMount(){
+      console.log();
+      
+  }
+
 render(props){
     const {data, pagePlus, pageMoin, totalPage, clickPage} = this.props
     console.log(totalPage);

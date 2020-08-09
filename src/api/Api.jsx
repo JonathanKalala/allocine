@@ -1,7 +1,7 @@
 import axios from 'axios';
 axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem("token")}`;
 
-const API_TOKEN = "";
+const API_TOKEN = "b823688b32c2291b6c40399472cbe91b";
 
 export function getFilmsFromApiWithSearchedText (text, page) {
   const url = 'https://api.themoviedb.org/3/search/movie?api_key=' + API_TOKEN + '&language=fr&query=' + text + '&page=' + page
@@ -23,6 +23,13 @@ export function getFilmsAll () {
 
 export function getFilmUnique (id) {
   const url = 'https://api.themoviedb.org/3/movie/' + id + '?api_key=' + API_TOKEN + '&language=fr'
+  return fetch(url)
+    .then((response) => response.json())
+    .catch((error) => console.error(error))
+}
+
+export function getTopFilms () {
+  const url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + API_TOKEN + '&language=en-US&page=1'
   return fetch(url)
     .then((response) => response.json())
     .catch((error) => console.error(error))

@@ -8,3 +8,17 @@
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+@media screen and (max-width: 800px) {
+    .card_parent {
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .card_parent {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+    }
+  }
