@@ -49,7 +49,7 @@ class CardFilm extends React.Component {
   }
 
 render(props){
-    const {data, pagePlus, pageMoin, totalPage, clickPage} = this.props
+    const {data, pagePlus, pageMoin, totalPage, clickPage, page} = this.props
     console.log(totalPage);
     
     const card = data.map((item)=>{
@@ -63,14 +63,25 @@ render(props){
     </div>
     })
     let Previous=[]
-    if(totalPage>25){
-      for(let i=1; i<=25; i++ ){
-        Previous.push(<li class="page-item" onClick={clickPage(i)}><a class="page-link">{i}</a></li>)
-        }
-    } else{
-      for(let i=1; i<=totalPage; i++ ){
-        Previous.push(<li class="page-item" onClick={clickPage(i)}><a class="page-link">{i}</a></li>)
-        }
+    if(page<totalPage){
+      if(page>2){
+        for(let i=page-2; i<=page+2; i++ ){
+          if(page==i){
+            Previous.push(<li class="page-item" onClick={clickPage(i)}><a class="page-link" style={{backgroundColor:"yellow"}} >{i}</a></li>)
+          } else{
+            Previous.push(<li class="page-item" onClick={clickPage(i)}><a class="page-link">{i}</a></li>)
+          }
+          }
+      } else{
+        for(let i=1; i<=page+4; i++ ){
+          if(page==i){
+            Previous.push(<li class="page-item" onClick={clickPage(i)}><a class="page-link" style={{backgroundColor:"yellow"}} >{i}</a></li>)
+          } else{
+            Previous.push(<li class="page-item" onClick={clickPage(i)}><a class="page-link">{i}</a></li>)
+          }
+          }
+      }
+      
     }
     
 
@@ -82,7 +93,7 @@ render(props){
           <div class="card_parent" > 
     {card}
     </div>
-    <nav aria-label="Page navigation example">
+    <nav aria-label="Page navigation example" className='pagination'>
   <ul class="pagination">
     <li class="page-item">
       <a class="page-link"  aria-label="Previous" onClick={pageMoin()}>

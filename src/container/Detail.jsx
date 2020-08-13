@@ -14,8 +14,13 @@ class Detail extends React.Component {
       }
 
       componentDidMount(){
-        const dat = this.props.match.params.id;
-        console.log(dat);
+        const params = window.location.pathname;
+        const parameters = params.split("/");
+        const dat = parameters[2]
+        console.log(`voici le params ${dat} `);
+
+        // const dat = this.props.match.params.id;
+        // console.log(dat);
         getFilmUnique(dat).then(data => {
             this.setState({ dataFilm: data, genre:data.genres[0].name })
             console.log(data.genres[0].name);
@@ -24,7 +29,7 @@ class Detail extends React.Component {
       
       render(props){
       console.log(this.state.dataFilm);
-      // const {AjoutFavorie} = this.props
+      const {AjoutFavorie} = this.props
       
       
       return(
@@ -47,7 +52,7 @@ class Detail extends React.Component {
         <p class="text-muted">Durée: {this.state.dataFilm.runtime} </p>
         <p class="text-muted">Budget: {this.state.dataFilm.budget} </p>
         <p class="text-muted">Popularité du film: {this.state.dataFilm.popularity} </p>
-        <p ><i class="fa fa-heart" aria-hidden="true" style={{color:'red'}} ></i></p>
+        <p ><i class="fa fa-heart" aria-hidden="true" style={{color:'red'}} onClick={AjoutFavorie(this.state.dataFilm.id)} ></i></p>
       </div>
       </div>
       </div>

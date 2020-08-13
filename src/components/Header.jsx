@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "../asset/scss/Header.scss"
+import {Link} from 'react-router-dom'
 
 
 
@@ -33,12 +34,12 @@ class Header extends React.Component {
                     <ul className="menu_text">
                         <li>Cinema</li>
                         <li>Serie</li>
-                        <li>Top</li>
+                        <li><Link to="/Favorie">Favories</Link></li>
                     </ul>
                     
                     <form class="form-inline active-purple-3 active-purple-4">
                         {/* <i class="fas fa-search" aria-hidden="true"></i> */}
-                        <i class="fas fa-search" onClick={_searchTextInputChanged(this.state.recherche)}></i>
+                        <i class="fas fa-search" onClick={_searchTextInputChanged(this.state.recherche)} style={{cursor:"pointer"}} ></i>
                         <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
                             aria-label="Search" onChange={(text) => this.OnSearch(text)} />
                     </form>

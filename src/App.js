@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 import { getFilmsFromApiWithSearchedText, getFilmsAll } from './api/Api'
 import TheContainer from './container/TheContainer'
 import Detail from './container/Detail';
+import Favori from './container/Favories'
 
 class App extends React.Component {
   
@@ -19,6 +20,7 @@ class App extends React.Component {
     this.searchedText = "stars" // Initialisation de notre donnée searchedText en dehors du state
     this.page=1
     this.totalPage=10
+    this.Favories=[44833]
     this.state={
       films:[],
       
@@ -61,6 +63,10 @@ _searchTextInputChanged = input =>( e )=> {
 
 AjoutFavorie = input =>( e )=> {
   console.log("Je suis ajout");
+  this.Favories.push(input)
+
+  console.log(this.Favories);
+  
   
 }
 
@@ -183,9 +189,9 @@ render(){
             <Switch>
             <div className= "App">
                 {/* <Route exact path="/" component={TheContainer}/> */}
-                <Route exact path='/' component={() => <TheContainer data={this.state.films} pagePlus={this.pagePlus} pageMoin={this.pageMoin} totalPage={this.totalPage} clickPage={this.clickPage} />} />
-                <Route path="/Detail/:id" component={Detail}/>
-                
+                <Route exact path='/' component={() => <TheContainer data={this.state.films} pagePlus={this.pagePlus} pageMoin={this.pageMoin} totalPage={this.totalPage} clickPage={this.clickPage} page={this.page} />} />
+                <Route path="/Detail/:id" component={()=> <Detail AjoutFavorie={this.AjoutFavorie} />}/>
+                {/* <Route path="/Favorie" component={()=> <Favori Favories={this.Favories} />} /> */}
             </div>
             </Switch>
             <Footer />

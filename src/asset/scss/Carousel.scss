@@ -1,9 +1,12 @@
 .carousel{
     height: auto;
+    width: 800px;
+    margin-right: 10%;
+    margin-left: 10%;
 
     img{
         height: 400px;
-        width: 900px;
+        margin-left: -50px;
     }
 
     @media screen and (max-width: 500px) {
