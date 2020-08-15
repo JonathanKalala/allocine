@@ -34,6 +34,13 @@ class App extends React.Component {
 //     this.searchedText = text // Modification du texte recherché à chaque saisie de texte, sans passer par le setState comme avant
 // }
 
+componentDidMount(){
+  getFilmsAll().then(data => {
+    this.setState({ films: data.results })
+    console.log(data.results);  
+})
+}
+
 _searchTextInputChanged = input =>( e )=> {
   this.searchedText= input
   this.page=1
@@ -172,14 +179,7 @@ pageMoin = input =>( e )=> {
     }
   
 
-  componentDidMount(){
-    getFilmsAll().then(data => {
-      this.setState({ films: data.results })
-      console.log(data.results);
-      
-      
-  })
-  }
+  
 
 
 
