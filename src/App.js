@@ -175,6 +175,8 @@ pageMoin = input =>( e )=> {
   componentDidMount(){
     getFilmsAll().then(data => {
       this.setState({ films: data.results })
+      console.log(data.results);
+      
       
   })
   }
