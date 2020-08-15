@@ -28,7 +28,7 @@ class Carousel extends React.Component{
   })
     return(
       <div className="carousel">
-          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" className="col-sm-12">
 <div class="carousel-inner">
   <div class="carousel-item active">
     <img src="https://www.letelegramme.fr/images/2019/10/22/cinema-qui-interdit-un-film-aux-moins-de-12-ans_4871700_1000x734p.jpg?v=1" class="d-block w-100" alt="..." />

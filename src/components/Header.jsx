@@ -34,7 +34,7 @@ class Header extends React.Component {
                     <ul className="menu_text">
                         <li>Cinema</li>
                         <li>Serie</li>
-                        <li><Link to="/Favorie">Favories</Link></li>
+                        <li>Favories</li>
                     </ul>
                     
                     <form class="form-inline active-purple-3 active-purple-4">

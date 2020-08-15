@@ -1,10 +1,17 @@
 .detail{
-    border: 1px solid red;
+    color: white;
 
-    .card{
-        border: 1px solid red;
-    }
+    // .card{
+    //     border: 1px solid red;
+    // }
     .img{
-        max-height: 200px;
+    width: 200px;
     }
+    
+    @media screen and (max-width: 500px) {
+    
+        .img{
+           width: 100px;
+        }
+      }
 }

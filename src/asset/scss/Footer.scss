@@ -1,6 +1,7 @@
 footer{
     display: grid;
     grid-template-rows: auto auto;
+    color: white;
 
     .footer1{
         background-color: rgb(95, 85, 85);
@@ -8,6 +9,12 @@ footer{
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 60px;
         padding-left: 5%;
+
+        .iconify{
+          font-size: 50px;
+          margin: 30px;
+          text-align: center;
+        }
     }
 
     .footer2{

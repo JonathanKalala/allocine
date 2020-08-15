@@ -8,13 +8,24 @@ function Footer(){
         <footer>
             <div className="footer1">
                 <div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quos nemo aut sapiente cupiditate deserunt nihil hic! Suscipit molestiae recusandae alias voluptatum nemo nesciunt iusto, magnam quo aut dolore facere.
+                    {/* <p>Apropos de nous</p>
+                    <p>Recrutement</p>
+                    <p>Publicitz GNU</p> */}
+                    <p>Politique de coquies</p>
+                    <p>Donné personnelles</p>
+                    <p>Jeux concours</p>
+                    <p>Revues de presse</p>
                 </div>
                 <div>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur recusandae expedita culpa voluptatum animi voluptatibus commodi, aspernatur nobis molestiae cupiditate doloremque necessitatibus magnam earum incidunt labore. Animi provident cumque ea!
+                    <p>Nous sommes ausssi sur mobile :</p>
+                <span class="iconify" data-icon="logos:android-icon" data-inline="false"></span>
+                <span class="iconify" data-icon="openmoji:apple" data-inline="false"></span>
                 </div>
                 <div>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, voluptatum harum at veniam nisi labore neque explicabo corporis distinctio quis, officiis ipsam quos ullam dignissimos ipsum voluptatem fuga aut quam!
+                    <p>Avenue de la montagne 25,</p>
+                    <p>Saint Luis de la cravatte</p>
+                    <p>+243852282012</p>
+                    <p>AloocineGilkbens@gmail.com</p>
                 </div>
             </div>
             <div className="footer2">

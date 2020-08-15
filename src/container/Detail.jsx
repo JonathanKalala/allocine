@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {getFilmUnique, getImageFromApi} from '../api/Api'
+import '../asset/scss/Detail.scss'
 
 
 
@@ -41,8 +42,8 @@ class Detail extends React.Component {
       </div>
       <div class="col-md-7">
       <div class="card-body">
-      <h5 class="card-title">{this.state.dataFilm.title}</h5>
-      <p class="card-text">{this.state.dataFilm.overview}</p>
+      <h5 class="card-title" style={{color:"white"}} >{this.state.dataFilm.title}</h5>
+      <p class="" style={{color:"white"}} >{this.state.dataFilm.overview}</p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       <div>
         <p class="text-muted">Genre: {this.state.genre} </p>
