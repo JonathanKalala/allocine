@@ -16,8 +16,10 @@ class App extends React.Component {
   
 
   constructor(props) {
+    
     super(props)
     this.searchedText = "stars" // Initialisation de notre donnée searchedText en dehors du state
+    this.titreSearch="Nous vous proposons une sélection"
     this.page=1
     this.totalPage=10
     this.Favories=[44833]
@@ -36,6 +38,7 @@ class App extends React.Component {
 
 _searchTextInputChanged = input =>( e )=> {
   this.searchedText= input
+  this.titreSearch=input
   this.page=1
 
   console.log(this.searchedText);
@@ -192,7 +195,7 @@ render(){
             <Switch>
             <div className= "App">
                 {/* <Route exact path="/" component={TheContainer}/> */}
-                <Route exact path='/' component={() => <TheContainer data={this.state.films} pagePlus={this.pagePlus} pageMoin={this.pageMoin} totalPage={this.totalPage} clickPage={this.clickPage} page={this.page} />} />
+                <Route exact path='/' component={() => <TheContainer data={this.state.films} pagePlus={this.pagePlus} pageMoin={this.pageMoin} totalPage={this.totalPage} clickPage={this.clickPage} page={this.page} titreSearch={this.titreSearch} />} />
                 <Route path="/Detail/:id" component={()=> <Detail AjoutFavorie={this.AjoutFavorie} />}/>
                 {/* <Route path="/Favorie" component={()=> <Favori Favories={this.Favories} />} /> */}
             </div>

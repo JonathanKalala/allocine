@@ -60,7 +60,7 @@ class CardFilm extends React.Component {
 render(props){
   
   
-    const {data, pagePlus, pageMoin, totalPage, clickPage, page} = this.props
+    const {data, pagePlus, pageMoin, totalPage, clickPage, page, titreSearch} = this.props
     console.log(totalPage);
     console.log(data);
 
@@ -120,10 +120,11 @@ render(props){
 
     return( 
         <div>
+          <h1>{titreSearch}</h1>
           <div class="card_parent" > 
     {card}
     </div>
-    <nav aria-label="Page navigation example" className='pagination'>
+    <nav aria-label="Page navigation example" className='pagination1'>
   <ul class="pagination">
     <li class="page-item">
       <a class="page-link"  aria-label="Previous" onClick={pageMoin()}>
@@ -133,6 +134,21 @@ render(props){
     {Previous.map((item)=>{
       return item
     })}
+    <li class="page-item">
+      <a class="page-link"  aria-label="Next" onClick={pagePlus()}>
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<nav aria-label="Page navigation example" className='pagination2'>
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link"  aria-label="Previous" onClick={pageMoin()}>
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
     <li class="page-item">
       <a class="page-link"  aria-label="Next" onClick={pagePlus()}>
         <span aria-hidden="true">&raquo;</span>
