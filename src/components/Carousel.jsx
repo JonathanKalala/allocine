@@ -11,7 +11,7 @@ class Carousel extends React.Component{
 
   
   componentDidMount(){
-    getTopFilms().then(data => {
+    getTopFilms(1).then(data => {
       this.setState({ films: data.results })
       console.log(data.results);
       

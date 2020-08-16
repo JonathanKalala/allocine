@@ -21,7 +21,7 @@ class CardFilm extends React.Component {
     }
 
     componentDidMount(){
-      getTopFilms().then(data => {
+      getTopFilms(2).then(data => {
         this.setState({ films: data.results })
         console.log(data.results);
         
@@ -75,8 +75,7 @@ render(props){
             <img src={item.poster_path?getImageFromApi(item.poster_path) : "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Question_Mark_Film_Poster.jpg/220px-Question_Mark_Film_Poster.jpg"} class="card-img-top" alt="..." style={{height:"200px"}} />
             </Link>
     <p class="card-text"><small class="text-muted">{item.title}</small></p>
-    <p ><i class="fa fa-heart" aria-hidden="true" style={this.state.ElementStyle} onClick={this.Method.bind(this)}></i>
-</p>
+    {/* <p ><i class="fa fa-heart" aria-hidden="true" style={this.state.ElementStyle} onClick={this.Method.bind(this)}></i></p> */}
     </div>
     })
     } else{
@@ -86,8 +85,7 @@ render(props){
             <img src={item.poster_path?getImageFromApi(item.poster_path) : "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Question_Mark_Film_Poster.jpg/220px-Question_Mark_Film_Poster.jpg"} class="card-img-top" alt="..." style={{height:"200px"}} />
             </Link>
     <p class="card-text"><small class="text-muted">{item.title}</small></p>
-    <p ><i class="fa fa-heart" aria-hidden="true" style={this.state.ElementStyle} onClick={this.Method.bind(this)}></i>
-</p>
+    {/* <p ><i class="fa fa-heart" aria-hidden="true" style={this.state.ElementStyle} onClick={this.Method.bind(this)}></i></p> */}
     </div>
     })
 

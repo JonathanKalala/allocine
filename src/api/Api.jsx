@@ -28,8 +28,8 @@ export function getFilmUnique (id) {
     .catch((error) => console.error(error))
 }
 
-export function getTopFilms () {
-  const url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + API_TOKEN + '&language=en-US&page=1'
+export function getTopFilms (page) {
+  const url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + API_TOKEN + '&language=en-US&page='+ page
   return fetch(url)
     .then((response) => response.json())
     .catch((error) => console.error(error))
