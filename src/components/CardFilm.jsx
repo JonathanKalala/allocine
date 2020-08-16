@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import "../asset/scss/CardFilm.scss"
 import { getFilmsFromApiWithSearchedText } from '../api/Api'
 import axios from 'axios'
-import { getImageFromApi, getFilmsAll } from '../api/Api'
+import { getImageFromApi, getTopFilms } from '../api/Api'
 import { Link } from 'react-router-dom';
 
 
@@ -21,9 +21,11 @@ class CardFilm extends React.Component {
     }
 
     componentDidMount(){
-      getFilmsAll().then(data => {
+      getTopFilms().then(data => {
         this.setState({ films: data.results })
         console.log(data.results);
+        
+        
     })
     }
 
