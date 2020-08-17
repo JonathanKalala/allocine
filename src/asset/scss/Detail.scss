@@ -1,5 +1,6 @@
 .detail{
     color: white;
+    padding-top: 130px;
 
     // .card{
     //     border: 1px solid red;
@@ -14,4 +15,12 @@
            width: 100px;
         }
       }
+}
+
+
+@media screen and (max-width: 500px) {
+    
+  .detail{
+     padding-top: 70px;
+  }
 }
