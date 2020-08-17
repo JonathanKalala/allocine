@@ -5,6 +5,9 @@ header{
     height: 120px;
     color: #FECC01;
     box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 
     img{
         box-sizing: border-box;
@@ -32,9 +35,11 @@ header{
     }
 
     @media screen and (max-width: 500px) {
+        
         .menu {
             display: grid;
             grid-template-columns: 1fr;
+            margin: 0px;
         }
         img{
             box-sizing: border-box;
@@ -43,6 +48,13 @@ header{
       }
 
 }
+
+@media screen and (max-width: 500px) {
+        
+    header{
+        height: auto;
+    }
+  }
 
 
 

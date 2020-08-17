@@ -1,10 +1,32 @@
 import React, {useState, useEffect} from 'react';
 import Carousel from '../components/Carousel'
 import CardFilm from '../components/CardFilm'
+import {getTopFilms, getImageFromApi} from '../api/Api'
 
 class App extends React.Component {
 
+  state={
+    films1:[],
+    films2:[],
+    films3:[]
+  }
 
+  componentDidMount(){
+    getTopFilms(1).then(data => {
+      this.setState({ films1: data.results })
+      console.log(data.results);
+  })
+
+  getTopFilms(2).then(data => {
+    this.setState({ films2: data.results })
+    console.log(data.results);
+})
+
+getTopFilms(3).then(data => {
+  this.setState({ films3: data.results })
+  console.log(data.results);
+})
+  }
 
 render(){
   const {data, pagePlus, pageMoin, totalPage, clickPage, page, titreSearch} = this.props
@@ -12,8 +34,19 @@ render(){
   
 
   return (
-    <div className="">
-        <Carousel />
+    <div className="theContainer">
+        <h1 style={{paddingTop:"120px"}} >Les tops</h1>
+        <div className="parent_carousel">
+          <Carousel data1={this.state.films1}/>
+          <div className="carousel2">
+          <Carousel data1={this.state.films2} />
+          </div>
+          <div className="carousel3">
+
+          <Carousel data1={this.state.films3} />
+          </div>
+          
+        </div>
         <CardFilm data={data} pagePlus={pagePlus} pageMoin={pageMoin} totalPage={totalPage} clickPage={clickPage} page={page} titreSearch={titreSearch}/>
       </div>
   );
