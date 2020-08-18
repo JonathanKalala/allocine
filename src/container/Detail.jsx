@@ -110,7 +110,7 @@ class Detail extends React.Component {
             <div class="col-md-12">
       <div class="row no-gutters">
       <div class="col-md-4">
-      <img className="img" src={getImageFromApi(this.state.dataFilm.poster_path)} class="card-img" alt="..." />
+      <img className="img" src={getImageFromApi(this.state.dataFilm.poster_path)} class="card-img" alt="..." onClick={this.openModal} />
       </div>
       <div class="col-md-7">
       <div class="card-body">

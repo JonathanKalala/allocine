@@ -1,12 +1,14 @@
 .detail{
     color: white;
     padding-top: 130px;
+    cursor: pointer;
 
     // .card{
     //     border: 1px solid red;
     // }
     .img{
     width: 200px;
+    cursor: pointer;
     }
     
     @media screen and (max-width: 500px) {
