@@ -11,10 +11,11 @@ import { getFilmsFromApiWithSearchedText, getFilmsAll } from './api/Api'
 import TheContainer from './container/TheContainer'
 import Detail from './container/Detail';
 import Favori from './container/Favories'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Lecteur from './container/Lecteur'
 
 class App extends React.Component {
-  
-
   constructor(props) {
     
     super(props)
@@ -54,6 +55,7 @@ _searchTextInputChanged = input =>( e )=> {
     if(!(data.results ==undefined)){
       this.setState({ films: data.results })
     } else{
+      toast.warning("Pas des films pour cette recherche");
       console.log("il y' a rien");
       
     }
@@ -191,16 +193,18 @@ render(){
   return (
 
     <BrowserRouter>
-            <Header _searchTextInputChanged={this._searchTextInputChanged}/>
+            {/* <Header _searchTextInputChanged={this._searchTextInputChanged}/>
             <Switch>
-            <div className= "App">
+            <div className= "App"> */}
                 {/* <Route exact path="/" component={TheContainer}/> */}
                 <Route exact path='/' component={() => <TheContainer data={this.state.films} pagePlus={this.pagePlus} pageMoin={this.pageMoin} totalPage={this.totalPage} clickPage={this.clickPage} page={this.page} titreSearch={this.titreSearch} />} />
                 <Route path="/Detail/:id" component={()=> <Detail AjoutFavorie={this.AjoutFavorie} />}/>
+                <Route exact path='/:id' component={Lecteur }/>
                 {/* <Route path="/Favorie" component={()=> <Favori Favories={this.Favories} />} /> */}
-            </div>
+            {/* </div>
+            
             </Switch>
-            <Footer />
+            <Footer /> */}
     </BrowserRouter>
   );
 }

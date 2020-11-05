@@ -5,6 +5,10 @@
     margin-top: -15px;
 }
 
+.top{
+    padding-top: 120px;
+}
+
 .carousel{
     height: 300px;
     width: 100%;
@@ -47,5 +51,9 @@
     }
     .carousel2 {
         display: none;
+    }
+
+    .top{
+        padding-top: 60px;
     }
   }
